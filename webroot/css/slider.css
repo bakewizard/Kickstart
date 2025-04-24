@@ -1,0 +1,24 @@
+.slider-block .slider-btn {
+  border: 1px solid #dee2e6;
+  background-color: #fff;
+}
+.slider-block .slider-btn:hover {
+  background-color: #46858a;
+  color: #fff;
+}
+.slider-block .catalog-item {
+  box-shadow: -0.5px -0.5px 0 0.5px #e9ecef, inset -1px -1px 0 0 #e9ecef;
+}
+.slider-block .catalog-item .title {
+  margin: 0.5rem 0;
+  height: 50px;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.4rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.slider-block .catalog-item .item-footer {
+  height: 65px;
+}

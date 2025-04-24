@@ -1,0 +1,76 @@
+@import "variables";
+
+.menu-header {
+    padding: 0.8rem;
+    text-transform: uppercase;
+    background-color: $primary;
+    font-size: 1rem;
+    font-weight: 800;
+
+    a {
+        color: $white;
+    }
+}
+
+.menu-category {
+    margin: 0;
+    padding: 0;
+
+    li {
+        position: relative;
+        display: block;
+        border-bottom: 1px solid $border-color;
+
+        >a {
+            display: block;
+            padding: 0.5rem 1.2rem;
+        }
+
+        .active {
+            color: $white;
+            background-color: $primary;
+        }
+
+        &:hover {
+            color: $primary;
+            transition: color 0.3s;
+        }
+    }
+
+    li:hover .submenu {
+        display: block;
+        margin-left: 0px;
+    }
+
+    .submenu {
+        display: none;
+        position: absolute;
+        z-index: 20;
+        left: 100%;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        width: 250px;
+        box-shadow: 5px 5px 15px rgba(#000, 0.2);
+        background: #fff;
+
+        li {
+            list-style: none;
+        }
+
+        li a {
+            padding: 7px 15px;
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .menu-category {
+        .submenu {
+            max-width: 100%;
+            left: 0;
+            top: 100%;
+        }
+    }
+}

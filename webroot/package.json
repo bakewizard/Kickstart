@@ -1,0 +1,42 @@
+{
+    "name": "Kickstart",
+    "version": "1.0.0",
+    "description": "Theme building",
+    "author": "Yurii Martynenko <yura_m436@ukr.net>",
+    "license": "ISC",
+    "type": "module",
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^28.0.3",
+        "@rollup/plugin-node-resolve": "^16.0.1",
+        "@rollup/plugin-terser": "^0.4.4",
+        "browser-sync": "^3.0.3",
+        "del": "^8.0.0",
+        "gulp": "^5.0.0",
+        "gulp-imagemin": "^8.0.0",
+        "gulp-newer": "^1.4.0",
+        "gulp-noop": "^1.0.1",
+        "gulp-sass": "^6.0.1",
+        "rollup": "^4.38.0",
+        "sass": "^1.86.1"
+    },
+    "dependencies": {
+        "blueimp-gallery": "^3.4.0",
+        "bootstrap": "^5.3.5",
+        "bootstrap-icons": "^1.11.3",
+        "inputmask": "^5.0.9",
+        "nouislider": "^15.8.1",
+        "tiny-slider": "^2.9.4",
+        "use-bootstrap-select": "^2.2.1",
+        "vanillajs-datepicker": "^1.3.4"
+    },
+    "scripts": {
+        "start": "gulp",
+        "styles": "gulp styles",
+        "scripts": "gulp scripts",
+        "images": "gulp images",
+        "fonts": "gulp fonts",
+        "clean": "gulp clean",
+        "build": "gulp build",
+        "listen": "gulp listen"
+    }
+}

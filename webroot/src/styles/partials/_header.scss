@@ -1,0 +1,88 @@
+.navbar-top {
+    padding: 0;
+    background-color: $gray-100;
+
+    .nav-link {
+        // color: $white;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        &.active{
+            color: $primary;
+            font-weight: bold;
+        }
+    }
+
+    .navbar-toggler {
+        background-color: $primary;
+        color: $white;
+    }
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    background-color: $white;//tint-color($primary, 90%);
+    box-shadow: 0px 8px 16px -8px rgba(0, 0, 0, 0.06);
+}
+
+.search-box {
+    input {
+        border-radius: 0.25rem;
+        padding-right: 40px; /* Space for the magnifying glass */
+    }
+
+    .search-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+}
+
+.header-search-suggest {
+    position: absolute;
+    display: none;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 5px;
+    min-width: 250px;
+    max-height: 600px;
+    z-index: 1000;
+    overflow-y: scroll;
+    background: $white;
+    border: 1px solid $border-color;
+
+    .item-sku {
+        font-weight: bold;
+    }
+
+    .item-price {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .item-url {
+        font-size: 1.3em;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+        td {
+            padding: 5px;
+        }
+
+        tr {
+            &:hover {
+                background: $border-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
