@@ -19,41 +19,6 @@ div.required label:after {
     color: #ff0033;
 }
 
-.availability {
-    .in-stock {
-        color: #8ec104;
-
-        &:before {
-            content: "\F26B";
-            font-family: "bootstrap-icons";
-            display: inline-block;
-            padding-right: 0.3rem;
-        }
-    }
-
-    .out-of-stock {
-        color: #ff4700;
-
-        &:before {
-            content: "\F623";
-            font-family: "bootstrap-icons";
-            display: inline-block;
-            padding-right: 0.3rem;
-        }
-    }
-
-    .limited {
-        color: #ffad00;
-
-        &:before {
-            content: "\F431";
-            font-family: "bootstrap-icons";
-            display: inline-block;
-            padding-right: 0.3rem;
-        }
-    }
-}
-
 .star-rating {
     unicode-bidi: bidi-override;
     direction: rtl;

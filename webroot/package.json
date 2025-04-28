@@ -1,9 +1,9 @@
 {
     "name": "Kickstart",
     "version": "1.0.0",
-    "description": "Theme building",
-    "author": "Yurii Martynenko <yura_m436@ukr.net>",
-    "license": "ISC",
+    "description": "A clean and minimal starter theme for BakeKit CMS",
+    "author": "bakewizard <207716455+bakewizard@users.noreply.github.com>",
+    "license": "MIT",
     "type": "module",
     "devDependencies": {
         "@rollup/plugin-commonjs": "^28.0.3",

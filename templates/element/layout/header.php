@@ -4,8 +4,8 @@
             <div class="col-12 col-lg-2 text-center text-xl-start">
                 <?=
                 $this->Html->image('logo.png', [
-                    'alt' => 'Logo goes here',
-                    'title' => 'Logo',
+                    'alt' => $config['Cms']['siteName'] ?? $this->request->host(),
+                    'title' => $config['Cms']['siteName'] ?? $this->request->host(),
                     'class' => 'img-fluid',
                     'url' => ['plugin' => false, 'prefix' => false, 'controller' => 'Index', 'action' => 'index']
                 ]);

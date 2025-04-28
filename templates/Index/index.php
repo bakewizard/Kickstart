@@ -7,20 +7,21 @@
 
 <?php $this->append('left-sidebar', $this->region('left')); ?>
 
-<div class="p-3 border rounded">
+<div class="p-3 mb-2 border rounded">
     <?= $this->region('center-top') ?>
 </div>
 
-<?= $this->region('center') ?>
+<div class="p-3 mb-2 border rounded">
+    <?= $this->region('center') ?>
+</div>
+
 <?php if (isset($meta)): ?>
-    <div class="card mb-3">
-        <div class="card-body">
-            <header class="section-heading">
-                <h3 class="title-section"><?= $meta->title ?></h3>
-            </header>
-            <article>
-                <?= $meta->description ?>
-            </article>
-        </div>
+    <div class="p-3 mb-2 border rounded">
+        <header>
+            <h2><?= $meta->title ?></h2>
+        </header>
+        <article>
+            <?= $meta->description ?>
+        </article>
     </div>
 <?php endif; ?>

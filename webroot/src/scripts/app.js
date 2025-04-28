@@ -17,9 +17,7 @@ window.Datepicker = Datepicker;
 window.ComboBox = UseBootstrapSelect;
 window.noUiSlider = noUiSlider;
 
-let searchField = document.getElementById('search-field');
-let searchButton = document.getElementById('search-button');
-let smallCartBlock = document.getElementById('small-cart-block');
+let scrollUpButton = document.getElementById('scroll-up');
 
 export async function ajax({
     url,
@@ -113,32 +111,48 @@ export function fadeOut(element, duration, callback) {
     requestAnimationFrame(animate);
 }
 
-export async function addToCart(url, productPicture) {
-    const csrfToken = document.querySelector('meta[name="csrfToken"]').content;
+function onScroll() {
+    if (window.scrollY > 400) {
+        scrollUpButton.style.opacity = 0;
+        scrollUpButton.style.display = 'block';
 
-    try {
-        const data = await ajax({
-            url: url,
-            method: 'PUT',
-            data: { quantity: 1 },
-            headers: { 'X-CSRF-Token': csrfToken }
-        });
-        if (productPicture) {
-            animateCart(productPicture, smallCartBlock);
+        (function fade() {
+            var val = parseFloat(scrollUpButton.style.opacity);
+            if (!((val += .1) > 1)) {
+                scrollUpButton.style.opacity = val;
+                requestAnimationFrame(fade);
+            }
+        })();
+    } else {
+        scrollUpButton.style.opacity = 1;
+
+        (function fade() {
+            if ((scrollUpButton.style.opacity -= .1) < 0) {
+                scrollUpButton.style.display = "none";
+            } else {
+                requestAnimationFrame(fade);
+            }
+        })();
+    }
+}
+
+function scrollToTop(e, duration = 800) {
+    e.preventDefault();
+    const start = window.scrollY;
+    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+    const distance = start;
+    const animateScroll = (timestamp) => {
+        const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const easedProgress = progress < 0.5 ? 4 * progress * progress * progress : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;
+        window.scrollTo(0, Math.floor(start - distance * easedProgress));
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animateScroll);
         }
-        let cartBlockQuantity = smallCartBlock.querySelector('#small-cart-quantity');
-        let cartBlockSum = smallCartBlock.querySelector('#small-cart-sum');
-        cartBlockQuantity.textContent = data.cart.total.count;
-        cartBlockSum.textContent = data.cart.total.sum;
-    } catch (e) {
-        console.error(e.message);
-    }
+    };
+    requestAnimationFrame(animateScroll);
 }
 
-function onSearchButtonClick(e) {
-    if (!searchField.value) {
-        e.preventDefault();
-    }
-}
-
-searchButton.addEventListener('click', onSearchButtonClick);
+window.addEventListener('scroll', onScroll);
+scrollUpButton.addEventListener('click', scrollToTop);
