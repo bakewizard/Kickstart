@@ -1,0 +1,69 @@
+@use "../abstracts/tokens" as t;
+
+.footer {
+    background-color: #f8f9fa;
+    line-height: 1.4;
+
+    .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: #6c757d;
+        margin-bottom: 0;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.4rem;
+
+        +.social-icon {
+            margin-left: 0.4rem;
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            color: #fff;
+            background-color: t.$color-primary;
+        }
+    }
+
+    .widget {
+        margin-bottom: 1rem;
+
+        ul {
+            margin: 0;
+            padding: 0.8rem 0;
+            list-style: none;
+
+            a {
+                padding: 0.2rem 0;
+                font-size: 0.9rem;
+                text-decoration: none;
+
+                &:hover {
+                    color: t.$color-primary;
+                }
+            }
+        }
+    }
+
+    .links {
+        margin-bottom: 0;
+
+        li {
+            position: relative;
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    a {
+        color: inherit;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+}

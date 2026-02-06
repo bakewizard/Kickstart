@@ -5,13 +5,14 @@ import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import { deleteAsync } from 'del';
 import newer from 'gulp-newer';
-import browser from 'browser-sync';
+import browserSync from 'browser-sync';
 import { rollup } from 'rollup';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 
 const sass = gulpSass(dartSass);
+const browser = browserSync.create();
 
 const isDevBuild = ((process.env.NODE_ENV || 'development').trim().toLowerCase() === 'development');
 
@@ -44,6 +45,7 @@ const config = {
     },
     browser: {
         proxy: 'bakekit.test',
+        open: 'external',
         notify: false,
         watchEvents: ['add', 'change', 'unlink', 'addDir', 'unlinkDir']
     },
@@ -59,7 +61,7 @@ export function styles() {
     return src(config.src.styles)
         .pipe(sass({
             style: isDevBuild ? 'expanded' : 'compressed',
-            silenceDeprecations: ['legacy-js-api', 'mixed-decls', 'color-functions', 'global-builtin', 'import', 'slash-div'],
+            silenceDeprecations: ['legacy-js-api', 'color-functions', 'global-builtin', 'import', 'slash-div', 'if-function'],
         }).on('error', sass.logError))
         .pipe(dest(config.build.css))
         .pipe(browser.stream());

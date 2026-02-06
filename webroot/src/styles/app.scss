@@ -1,89 +1,9 @@
 @charset "UTF-8";
-@import "vendor";
-@import "partials/menu";
 
-.scroll-up {
-    cursor: pointer;
-    position: fixed;
-    bottom: 50px;
-    right: 20px;
-    display: none;
-}
+/* Modern design system */
+@use "base";
+@use "layouts";
+@use "components";
 
-div.required label:after {
-    content: "\F151";
-    font-family: "bootstrap-icons";
-    display: inline-block;
-    margin-left: 0.2rem;
-    font-size: 8px;
-    color: #ff0033;
-}
-
-.star-rating {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-
-    span.star {
-        &:before {
-            content: "\F588";
-            font-family: "bootstrap-icons";
-            display: inline-block;
-            color: #999;
-        }
-    }
-
-    span.star.filled {
-        &:before {
-            content: "\F586";
-            font-family: "bootstrap-icons";
-            display: inline-block;
-            color: #e3cf7a;
-        }
-    }
-}
-
-.star-rating-small {
-    @extend .star-rating;
-    font-size: 15px;
-
-    span.star {
-        &:before {
-            padding-right: 1px;
-        }
-    }
-}
-
-.star-rating-big {
-    @extend .star-rating;
-    font-size: 25px;
-
-    span.star {
-        &:before {
-            padding-right: 10px;
-        }
-
-        &:hover {
-            cursor: pointer;
-
-            &:before,
-            ~span.star:before {
-                content: "\F586";
-                font-family: "bootstrap-icons";
-                display: inline-block;
-                color: #e3cf7a;
-            }
-        }
-    }
-}
-
-.quantity-spinner {
-    width: 130px;
-    input[type="number"]::-webkit-outer-spin-button,
-    input[type="number"]::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-    input[type="number"] {
-        -moz-appearance: textfield;
-    }
-}
+/* Legacy libraries */
+@import "vendors/widgets";

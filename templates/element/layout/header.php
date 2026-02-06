@@ -12,7 +12,7 @@
                 ?>
             </div>
             <div class="col-12 col-lg-8">
-                <nav class="navbar navbar-top navbar-expand-lg p-0">
+                <nav class="navbar navbar-top navbar-expand-lg p-0 bg-transparent">
                     <div class="container justify-content-center">
                         <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
                             <i class="bi bi-list"></i>

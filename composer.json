@@ -5,7 +5,7 @@
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "theme", "bakekit"],
     "require": {
-        "php": ">=8.1",
-        "cakephp/cakephp": "5.2.*"
+        "php": ">=8.2",
+        "cakephp/cakephp": "5.3.*"
     }
 }

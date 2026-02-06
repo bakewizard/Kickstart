@@ -1,0 +1,36 @@
+@use "sass:string";
+@use "../abstracts/tokens" as t;
+
+$primary: t.$color-primary;
+$secondary: t.$color-secondary;
+
+$body-color: t.$color-foreground-body;
+$body-bg: t.$color-background-body;
+
+$link-color: t.$color-foreground-body;
+// $link-decoration: none;
+$link-hover-color: t.$color-primary;
+// $link-hover-decoration: none;
+
+$border-color: t.$color-border;
+
+// $btn-color: $white;
+$btn-link-color: #fff;
+
+// Carousel
+$carousel-control-color: t.$color-primary;
+$carousel-control-opacity: .8;
+$carousel-control-width: 5%;
+$carousel-indicator-width: 40px;
+$carousel-indicator-height: 8px;
+$carousel-indicator-active-bg: t.$color-primary;
+$carousel-caption-color: #495057;
+$carousel-control-icon-width: 3rem;
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1500px
+);
