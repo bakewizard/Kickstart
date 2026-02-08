@@ -7,12 +7,45 @@
 }
 
 div.required label:after {
-    content: "\F151";
     font-family: "bootstrap-icons";
+    content: "\f151"; //asterisk
     display: inline-block;
     margin-left: 0.2rem;
-    font-size: 8px;
+    font-size: 1rem;
     color: #ff0033;
+}
+
+.availability {
+    .in-stock {
+        color: #8ec104;
+
+        &:before {
+            font-family: 'bootstrap-icons';
+            content: "\F26B"; //check-circle
+            padding-right: 0.3rem;
+        }
+    }
+
+    .out-of-stock {
+        color: #ff4700;
+
+        &:before {
+            font-family: 'bootstrap-icons';
+            content: "\F623"; //x-circle
+            padding-right: 0.3rem;
+        }
+    }
+
+    .limited {
+        color: #ffad00;
+
+        &:before {
+            font-family: 'bootstrap-icons';
+            font-weight: 900;
+            content: "\F431"; //info-circle
+            padding-right: 0.3rem;
+        }
+    }
 }
 
 .quantity-spinner {
@@ -28,4 +61,9 @@ div.required label:after {
         appearance: textfield;
         -moz-appearance: textfield;
     }
+}
+
+.blueimp-gallery>.indicator>li {
+    width: 75px;
+    height: 75px;
 }

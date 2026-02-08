@@ -1,5 +1,5 @@
 @use "sass:string";
-@use "../abstracts/tokens" as t;
+@use "abstracts/tokens" as t;
 
 $primary: t.$color-primary;
 $secondary: t.$color-secondary;

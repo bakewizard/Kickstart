@@ -1,9 +1,6 @@
 @charset "UTF-8";
 
-/* Modern design system */
+@use "vendors";
 @use "base";
-@use "layouts";
+@use "layout";
 @use "components";
-
-/* Legacy libraries */
-@import "vendors/widgets";

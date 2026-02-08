@@ -1,45 +1,7 @@
-  @import "bootstrap";
-
- /* Bootstrap icons */
-$bootstrap-icons-font-dir: "../fonts";
-@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons";
-
-/* Blueimp gallery */
-@import "../../../node_modules/blueimp-gallery/css/blueimp-gallery";
-@import "../../../node_modules/blueimp-gallery/css/blueimp-gallery-indicator";
-.blueimp-gallery>.indicator>li {
-    width: 75px;
-    height: 75px;
-}
-
-/* Vanilla JS Datepicker */
-@import "../../../node_modules/vanillajs-datepicker/sass/datepicker-bs5";
-
-/* Tiny Slider */
-@import "../../../node_modules/tiny-slider/src/tiny-slider";
-
- /* use bootstrap select */
-@import "../../../node_modules/use-bootstrap-select/scss/use-bootstrap-select";
-
-/* NoUi Slider */
-@import "../../../node_modules/nouislider/dist/nouislider";
-
-#price-slider {
-    height: 10px;
-
-    .noUi-handle {
-        height: 18px;
-        width: 18px;
-        top: -5px;
-        right: -9px;
-        border-radius: 9px;
-        &::before,
-        &::after {
-            display: none;
-        }
-    }
-
-    .noUi-connect {
-        background: $primary;
-    }
-}
+ /* Tiny Slider */
+ @use "tiny-slider/src/tiny-slider";
+ /* NoUi Slider */
+ @use "nouislider/dist/nouislider";
+ /* Blueimp gallery */
+ @use "blueimp-gallery/css/blueimp-gallery";
+ @use "blueimp-gallery/css/blueimp-gallery-indicator";

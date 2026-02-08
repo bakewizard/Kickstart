@@ -4,8 +4,8 @@
 
     span.star {
         &:before {
-            content: "\F588";
             font-family: "bootstrap-icons";
+            content: "\F588";
             display: inline-block;
             color: #999;
         }
@@ -13,8 +13,8 @@
 
     span.star.filled {
         &:before {
-            content: "\F586";
             font-family: "bootstrap-icons";
+            content: "\F586";
             display: inline-block;
             color: #e3cf7a;
         }
@@ -46,8 +46,8 @@
 
             &:before,
             ~span.star:before {
-                content: "\F586";
                 font-family: "bootstrap-icons";
+                content: "\F586";
                 display: inline-block;
                 color: #e3cf7a;
             }

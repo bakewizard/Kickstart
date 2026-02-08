@@ -60,6 +60,7 @@ const config = {
 export function styles() {
     return src(config.src.styles)
         .pipe(sass({
+            loadPaths: ['src/styles', 'node_modules'],
             style: isDevBuild ? 'expanded' : 'compressed',
             silenceDeprecations: ['legacy-js-api', 'color-functions', 'global-builtin', 'import', 'slash-div', 'if-function'],
         }).on('error', sass.logError))
