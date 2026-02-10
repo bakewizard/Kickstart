@@ -19,12 +19,12 @@ const isDevBuild = ((process.env.NODE_ENV || 'development').trim().toLowerCase()
 const config = {
     src: {
         scripts: [
-            'src/scripts/app.js',
-            'src/scripts/pages/home.js'
+            'resources/frontend/scripts/app.js',
+            'resources/frontend/scripts/pages/home.js'
         ],
-        styles: 'src/styles/**/*.scss',
+        styles: 'resources/frontend/styles/**/*.scss',
         images: [
-            'src/images/*.*',
+            'resources/frontend/images/*.*',
             'node_modules/blueimp-gallery/img/*.{svg,gif,png}'
         ],
         fonts: [
@@ -32,16 +32,16 @@ const config = {
         ]
     },
     build: {
-        js: 'js/',
-        css: 'css/',
-        img: 'img/',
-        fonts: 'fonts/'
+        js: 'webroot/js/',
+        css: 'webroot/css/',
+        img: 'webroot/img/',
+        fonts: 'webroot/fonts/'
     },
     watch: {
-        html: '../templates/**/*.php',
-        styles: 'src/styles/**/*.scss',
-        scripts: 'src/scripts/**/*.js',
-        images: 'src/images/**/*.{jpg,png,svg,webp}'
+        html: 'templates/**/*.php',
+        styles: 'resources/frontend/styles/**/*.scss',
+        scripts: 'resources/frontend/scripts/**/*.js',
+        images: 'resources/frontend/images/**/*.{jpg,png,svg,webp}'
     },
     browser: {
         proxy: 'bakekit.test',
@@ -50,17 +50,17 @@ const config = {
         watchEvents: ['add', 'change', 'unlink', 'addDir', 'unlinkDir']
     },
     clean: [
-        'js/',
-        'css/',
-        'img/',
-        'fonts/'
+        'webroot/js/',
+        'webroot/css/',
+        'webroot/img/',
+        'webroot/fonts/'
     ]
 };
 
 export function styles() {
     return src(config.src.styles)
         .pipe(sass({
-            loadPaths: ['src/styles', 'node_modules'],
+            loadPaths: ['node_modules'],
             style: isDevBuild ? 'expanded' : 'compressed',
             silenceDeprecations: ['legacy-js-api', 'color-functions', 'global-builtin', 'import', 'slash-div', 'if-function'],
         }).on('error', sass.logError))
