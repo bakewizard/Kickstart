@@ -103,7 +103,7 @@ export function images() {
             optipng({ optimizationLevel: 5 }),
             svgo({
                 plugins: [
-                    { name: 'removeViewBox', active: true },
+                    { name: 'removeViewBox', active: false },
                     { name: 'cleanupIDs', active: true }
                 ]
             })

@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var array $config
+ */
+?>
 <footer class="mt-5 bg-light">
     <div class="container p-4">
         <div class="row">
@@ -9,7 +15,7 @@
                             'alt' => $config['Cms']['siteName'] ?? $this->request->host(),
                             'title' => $config['Cms']['siteName'] ?? $this->request->host(),
                             'class' => 'img-fluid',
-                            'url' => ['plugin' => false, 'prefix' => false, 'controller' => 'Index', 'action' => 'index']
+                            'url' => ['plugin' => false, 'prefix' => false, 'controller' => 'Index', 'action' => 'index'],
                         ]);
                         ?>
                     </div>
@@ -34,7 +40,7 @@
 
     <div class="text-center m-0 p-3 bg-white">
         <div class="container">
-            ©&nbsp;<?= date("Y") ?>&nbsp; «<?= $config['Cms']['siteName'] ?? $this->request->host() ?>™»
+            ©&nbsp;<?= date('Y') ?>&nbsp; «<?= $config['Cms']['siteName'] ?? $this->request->host() ?>™»
         </div>
     </div>
 </footer>

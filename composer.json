@@ -3,9 +3,19 @@
     "description": "Kickstart theme for BakeKit CMS",
     "license": "MIT",
     "type": "cakephp-plugin",
-    "keywords": ["cakephp", "theme", "bakekit"],
+    "keywords": [
+        "cakephp",
+        "theme",
+        "bakekit"
+    ],
     "require": {
         "php": ">=8.2",
-        "cakephp/cakephp": "5.3.*"
+        "cakephp/cakephp": "5.3.*",
+        "bakewizard/bakekit": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kickstart\\": "src/"
+        }
     }
 }

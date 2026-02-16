@@ -8,4 +8,6 @@ use Cake\Core\BasePlugin;
 /**
  * Plugin class for Kickstart theme
  */
-class KickstartPlugin extends BasePlugin {}
+class KickstartPlugin extends BasePlugin
+{
+}

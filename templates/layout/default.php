@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var array $config
+ */
+?>
 <!doctype html>
 <html lang="<?= $config['App']['I18n']['currentLanguage'] ?>">
     <head>
@@ -11,12 +17,17 @@
         <?= $this->Html->css('app') ?>
         <?= $this->fetch('css') ?>
 
-        <?php foreach ($config['App']['I18n']['languages'] as $lang): ?>
+        <?php foreach ($config['App']['I18n']['languages'] as $lang) : ?>
             <?=
             $this->Html->meta([
                 'rel' => 'alternate',
-                'link' => $this->Url->build(['lang' => ($lang === $config['App']['I18n']['defaultLanguage']) ? false : $lang] + $this->request->getQueryParams() + $this->request->getParam('pass'), ['fullBase' => true]),
-                'hreflang' => $lang
+                'link' => $this->Url->build(
+                    ['lang' => $lang === $config['App']['I18n']['defaultLanguage'] ? false : $lang] +
+                    $this->request->getQueryParams() +
+                    $this->request->getParam('pass'),
+                    ['fullBase' => true],
+                ),
+                'hreflang' => $lang,
             ]);
             ?>
         <?php endforeach; ?>
@@ -24,33 +35,33 @@
     <body>
         <?= $this->element('layout/header') ?>
 
-        <div class="container-lg"> 
+        <div class="container-lg">
             <?= $this->Flash->render() ?>
             <?= $this->element('layout/breadcrumbs') ?>
             <div class="row">
-                <?php if ($this->fetch('left-sidebar')): ?>
+                <?php if ($this->fetch('sidebar-left')) : ?>
                     <aside class="col-xl-3">
-                        <?= $this->fetch('left-sidebar') ?>
+                        <?= $this->fetch('sidebar-left') ?>
                     </aside>
                 <?php endif; ?>
 
-                <?php if ($this->fetch('left-sidebar') && $this->fetch('right-sidebar')): ?>
+                <?php if ($this->fetch('sidebar-left') && $this->fetch('sidebar-right')) : ?>
                     <main class="col-xl-6">
                         <?= $this->fetch('content') ?>
                     </main>
-                <?php elseif ($this->fetch('left-sidebar') || $this->fetch('right-sidebar')): ?>
+                <?php elseif ($this->fetch('sidebar-left') || $this->fetch('sidebar-right')) : ?>
                     <main class="col-xl-9">
                         <?= $this->fetch('content') ?>
                     </main>
-                <?php else: ?>
+                <?php else : ?>
                     <main class="col-12">
                         <?= $this->fetch('content') ?>
                     </main>
                 <?php endif; ?>
 
-                <?php if ($this->fetch('right-sidebar')): ?>
+                <?php if ($this->fetch('sidebar-right')) : ?>
                     <aside class="col-xl-3">
-                        <?= $this->fetch('right-sidebar') ?>
+                        <?= $this->fetch('sidebar-right') ?>
                     </aside>
                 <?php endif; ?>
             </div>
