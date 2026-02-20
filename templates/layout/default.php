@@ -73,7 +73,7 @@
     <a id="scroll-up" href="#" class="btn btn-primary btn-lg scroll-up" role="button" title="Scroll up">
         <span class="bi bi-chevron-up text-light"></span>
     </a>
-    <?= $this->Html->script('app') ?>
+    <?= $this->Html->script('app', ['type' => 'module']) ?>
     <?= $this->fetch('script') ?>
 </body>
 

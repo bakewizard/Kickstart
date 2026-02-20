@@ -9,7 +9,6 @@
     <?= $this->Html->meta('description', $meta->seo_description, ['block' => true]); ?>
     <?= $this->Html->meta('keywords', $meta->seo_keywords, ['block' => true]); ?>
 <?php endif; ?>
-<?= $this->Html->script('home', ['block' => true]); ?>
 
 <?php $this->append('sidebar-left', $this->region('sidebar-left')); ?>
 

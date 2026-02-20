@@ -1,1 +1,0 @@
-!function(){"use strict";function t(t){if(!t.target)return;const e=t.target.closest(".add-to-cart-btn");if(e){t.preventDefault();const r=e.parentElement.dataset.url,a=e.closest(".catalog-item").querySelector(".image img");app.addToCart(r,a)}}document.querySelectorAll(".slider-block").forEach(e=>{e.addEventListener("click",t)})}();
