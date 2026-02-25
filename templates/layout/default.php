@@ -14,10 +14,6 @@
     <?= $this->Html->meta('viewport', 'width=device-width, initial-scale=1') ?>
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->meta('csrfToken', $this->request->getAttribute('csrfToken')) ?>
-
-    <?= $this->Html->css('app') ?>
-    <?= $this->fetch('css') ?>
-
     <?php foreach ($config['App']['I18n']['languages'] as $lang) : ?>
         <?=
         $this->Html->meta([
@@ -32,6 +28,10 @@
         ]);
         ?>
     <?php endforeach; ?>
+
+    <?= $this->Html->css('app') ?>
+    <?= $this->fetch('css') ?>
+    <?= $this->Html->script('app', ['type' => 'module']) ?>
 </head>
 
 <body>
@@ -73,7 +73,6 @@
     <a id="scroll-up" href="#" class="btn btn-primary btn-lg scroll-up" role="button" title="Scroll up">
         <span class="bi bi-chevron-up text-light"></span>
     </a>
-    <?= $this->Html->script('app', ['type' => 'module']) ?>
     <?= $this->fetch('script') ?>
 </body>
 
