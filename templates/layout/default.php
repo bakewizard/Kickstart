@@ -10,10 +10,10 @@
 <head>
     <title><?= $this->fetch('title') ?></title>
     <?= $this->Html->charset() ?>
-    <?= $this->fetch('meta'); ?>
     <?= $this->Html->meta('viewport', 'width=device-width, initial-scale=1') ?>
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->meta('csrfToken', $this->request->getAttribute('csrfToken')) ?>
+    <?= $this->fetch('meta'); ?>
     <?php foreach ($config['App']['I18n']['languages'] as $lang) : ?>
         <?=
         $this->Html->meta([

@@ -15,7 +15,7 @@
                             'alt' => $config['Cms']['siteName'] ?? $this->request->host(),
                             'title' => $config['Cms']['siteName'] ?? $this->request->host(),
                             'class' => 'img-fluid',
-                            'url' => ['plugin' => false, 'prefix' => false, 'controller' => 'Index', 'action' => 'index'],
+                            'url' => $this->homeUrl(),
                         ]);
                         ?>
                     </div>

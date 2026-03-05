@@ -4,16 +4,20 @@
  * @var mixed $breadcrumbs
  */
 ?>
-<?php if ($breadcrumbs) : ?>
+<?php $homeUrl = $this->homeUrl(); ?>
+<?php if ($breadcrumbs && $this->request->getPath() !== $this->homeUrl(false)) : ?>
     <?php $lastIdx = count($breadcrumbs) - 1; ?>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="<?= $this->Url->build(['plugin' => false, 'controller' => 'Index'], ['fullBase' => true]); ?>">
+                <a href="<?= $homeUrl ?>">
                     <i class="bi bi-house-door-fill"></i>
                 </a>
             </li>
             <?php foreach ($breadcrumbs as $i => $crumb) : ?>
+                <?php if ($crumb['url'] === $homeUrl) : ?>
+                    <?php continue; ?>
+                <?php endif; ?>
                 <?php if ($i !== $lastIdx) : ?>
                     <li class="breadcrumb-item">
                         <a href="<?= $crumb['url'] ?>"><?= $crumb['title'] ?></a>
@@ -27,6 +31,6 @@
         </ol>
     </nav>
 <?php elseif ($this->Breadcrumbs->getCrumbs()) : ?>
-    <?php $this->Breadcrumbs->prepend('<i class="fas fa-home"></i>', ['plugin' => false, 'controller' => 'Index']); ?>
+    <?php $this->Breadcrumbs->prepend('<i class="bi bi-house-door-fill"></i>', $this->homeUrl()); ?>
     <?= $this->Breadcrumbs->render(['class' => 'breadcrumb']); ?>
 <?php endif; ?>
