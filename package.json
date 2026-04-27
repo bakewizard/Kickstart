@@ -1,13 +1,13 @@
 {
     "name": "kickstart",
     "version": "1.0.0",
-    "description": "A clean and minimal starter theme for BakeKit CMS",
+    "description": "A clean and minimal starter theme for BakeKit",
     "author": "bakewizard <207716455+bakewizard@users.noreply.github.com>",
     "license": "MIT",
     "devDependencies": {
-        "sass": "^1.97.3",
-        "terser": "^5.46.0",
-        "vite": "^7.3.1"
+        "sass": "^1.99.0",
+        "terser": "^5.46.2",
+        "vite": "^8.0.10"
     },
     "dependencies": {
         "bootstrap": "^5.3.8",
